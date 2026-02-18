@@ -1,0 +1,180 @@
+/* กำหนดสีหลักให้เข้ากับบุคลิกนักเทคโนโลยี */
+$primary-color: #ffd700; // สีทองสำหรับเน้นจุดสำคัญ
+$bg-color: #022c43;      // สีน้ำเงินเข้มจากพื้นหลังรูปถ่าย [cite: 1]
+$text-color: #ffffff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  /* 1. ขยับจาก 160px เป็น 200px (160 Sidebar + 40 Space) */
+  left: 200px; 
+  
+  /* 2. ปรับการคำนวณความกว้างให้สัมพันธ์กัน */
+  width: calc(100% - 200px);
+  
+  /* 2. ลบ margin-left: 160px; ของเดิมออก */
+  
+  will-change: contents;
+  height: 90%;
+  min-height: 566px;
+  position: absolute; // เพราะมีตัวนี้ เราจึงควรใช้ left แทน margin ครับ
+  opacity: 0;
+  top: 5%;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+  box-sizing: border-box;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.nav-bar {
+  background: #181818;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  .logo {
+    display: block;
+    padding: 8px 0;
+    
+    img {
+      width: 24px;
+      height: auto;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    
+    a {
+      font-size: 22px;
+      color: #4d4d4e;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-color;
+      }
+      
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.text-zone {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  max-height: 90%;
+
+  h1 {
+    color: $primary-color;
+    font-size: 53px;
+    margin: 0;
+    font-family: 'Coolvetica'; // หรือฟอนต์ที่ดูทันสมัย
+    
+    &::before {
+      content: '<h1>';
+      font-family: 'La Belle Aurore';
+      color: $primary-color;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -40px;
+      left: -10px;
+      opacity: 0.6;
+    }
+
+    &::after {
+      content: '</h1>';
+      font-family: 'La Belle Aurore';
+      color: $primary-color;
+      font-size: 18px;
+      position: absolute;
+      margin-top: 18px;
+      margin-left: 20px;
+      opacity: 0.6;
+    }
+  }
+
+  p {
+    font-size: 13px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 300;
+    min-width: fit-content;
+    animation: pulse 1s;
+  }
+}
+
+/* สำหรับ Tag Skills ให้ดูโดดเด่น [cite: 13] */
+.skills-tags {
+  margin-top: 20px;
+  
+  span {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    
+    &:hover {
+      background: $primary-color;
+      color: #333;
+    }
+  }
+}
+.about-page {
+  padding: 100px; // เพิ่มพื้นที่ว่างรอบๆ ให้ดูไม่ชิดขอบ
+  
+  h1 {
+    margin-bottom: 40px; // เพิ่มระยะห่างระหว่างหัวข้อกับเนื้อหา
+  }
+
+  p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6; // เพิ่มระยะห่างระหว่างบรรทัดให้อ่านง่ายขึ้น
+  }
+}
+.skills-tags span {
+  transition: all 0.3s ease; // ทำให้การเปลี่ยนสีดูนุ่มนวล
+
+  &:hover {
+    background-color: #ffd700; // สีทอง
+    color: #022c43; // สีน้ำเงินเข้ม
+    transform: scale(1.1); // ขยายขนาดขึ้นเล็กน้อย
+  }
+}

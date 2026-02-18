@@ -1,0 +1,58 @@
+$primary-color: #ffd700; // สีทอง
+
+.experience-page {
+  .text-zone {
+    width: 50% !important; // ขยายความกว้างให้อ่านง่ายขึ้น
+    
+    h1 {
+      color: $primary-color;
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    .job-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-left: 5px solid $primary-color; // เส้นขีดด้านข้างสีทองเพื่อให้ดูเด่น
+      border-radius: 8px;
+
+      h2 {
+        color: #fff;
+        margin-bottom: 15px;
+      }
+
+      .job-desc {
+        color: #ccc;
+        font-style: italic;
+        margin-bottom: 25px;
+      }
+
+      .highlight-projects {
+        h3 {
+          color: $primary-color;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        ul {
+          list-style: none;
+          
+          li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 15px;
+            color: #fff;
+
+            &::before {
+              content: '✓'; // เครื่องหมายถูกสีทอง
+              position: absolute;
+              left: 0;
+              color: $primary-color;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

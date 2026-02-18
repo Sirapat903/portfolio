@@ -1,0 +1,77 @@
+$primary-color: #ffd700;
+.nav-bar {
+  background: #181818;
+  width: 160px; // ขยายเพิ่มเป็น 160px เพื่อให้คำว่า EXPERIENCE มีที่ว่างพอครับ
+  min-width: 160px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    a {
+text-decoration: none;
+  color: #4d4d4e;
+  font-size: 13px;
+  height: 60px;
+  display: flex;
+  align-items: center;      // จัดกลางแนวตั้ง
+  justify-content: center; // จัดกลางแนวนอน
+  width: 100%;            // *** เพิ่มบรรทัดนี้เพื่อให้มันกินพื้นที่เต็ม 160px ***
+  margin: 0;              // *** ล้างระยะขอบที่อาจจะเกินมา ***
+  padding: 0;             // *** ล้างระยะห่างที่อาจจะทำให้มันเยื้อง ***
+  transition: all 0.3s;
+  
+  // เพิ่มบรรทัดนี้เพื่อให้มั่นใจว่าตัวหนังสือไม่โดนบีบ
+  white-space: nowrap;
+
+      &:hover {
+        color: $primary-color;
+        background: rgba($primary-color, 0.05); // มีแสงสีทองจางๆ เวลาเอาเมาส์วาง
+      }
+
+      &.active {
+        color: $primary-color; // สีทองชัดเจนเมื่ออยู่หน้านั้น
+        font-weight: bold;
+      }
+    }
+  }
+}
+/* ตัวแปรสีทองตามสไตล์คุณพัท */
+
+.container {
+  /* ลบ width: 100% ออก แล้วใช้คำสั่งนี้แทนเพื่อให้เนื้อหาไม่โดน Sidebar ทับ */
+  width: calc(100% - 150px); 
+  
+  /* ดันเนื้อหาจากทางซ้ายออกมา 150px (ให้พอดีกับความกว้าง Sidebar) */
+  margin-left: 150px; 
+  
+  will-change: contents;
+  height: 90%;
+  min-height: 566px;
+  position: absolute;
+  opacity: 0;
+  top: 5%;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+  
+  /* เพิ่มส่วนนี้เพื่อให้การจัดวางข้างในดูสวยขึ้น */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
