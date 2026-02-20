@@ -7,7 +7,11 @@ const Sidebar = () => {
     <div className="nav-bar">
       <nav>
         {/* ปุ่มไปหน้า About (หน้าหลัก) */}
-        <NavLink exact="true" activeclassname="active" to="/">
+         <NavLink exact="true" activeclassname="active" to="/">
+          <span>HOME</span>
+        </NavLink>
+
+        <NavLink exact="true" activeclassname="active" to="/about">
           <span>ABOUT</span>
         </NavLink>
 

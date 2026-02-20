@@ -6,7 +6,7 @@ import { faPaintBrush, faCode, faLightbulb } from '@fortawesome/free-solid-svg-i
 // อย่าลืม import รูปภาพของคุณมาใช้แทน profileImg
 import profileImg from './assets/profile.jpg'; 
 
-const About = () => {
+const Home = () => {
   return (
     <div className="container hero-page">
       <div className="content-wrapper">
@@ -47,4 +47,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Home;
