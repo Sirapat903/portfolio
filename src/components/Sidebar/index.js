@@ -11,8 +11,8 @@ const Sidebar = () => {
           <span>HOME</span>
         </NavLink>
 
-        <NavLink exact="true" activeclassname="active" to="/about">
-          <span>ABOUT</span>
+         <NavLink exact="true" activeclassname="active" className="resume-link" to="/resume">
+          <span>RESUME</span>
         </NavLink>
 
         {/* ปุ่มไปหน้า Experience */}
@@ -24,6 +24,8 @@ const Sidebar = () => {
         <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact">
           <span>CONTACT</span>
         </NavLink>
+
+       
       </nav>
     </div>
   );
