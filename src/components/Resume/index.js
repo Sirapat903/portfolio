@@ -15,6 +15,7 @@ const Resume = () => {
           <a href="Resume.pdf" download className="download-btn">
             Download Resume
           </a>
+          
         </div>
 
         <div className="resume-grid">

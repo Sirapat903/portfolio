@@ -1,5 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar'; // อย่าลืม Import นะพัท!
+import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -8,16 +7,17 @@ import Resume from './components/Resume';
 
 function App() {
   return (
-    <>
-      <Sidebar /> {/* แถบเมนูจะอยู่ตรงนี้ตลอด */}
-      <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/about" element={<About />} /> 
-        <Route path="/experience" element={<Experience />} /> 
-        <Route path="/resume" element={<Resume />} /> 
-        <Route path="/contact" element={<Contact />} /> 
-      </Routes>
-    </>
+    <div className="App">
+      <Sidebar />
+      <main>
+        {/* ใส่ id เพื่อให้ปุ่มบน Navbar รู้ว่าจะเลื่อนไปตรงไหน */}
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="resume"><Resume /></section>
+        <section id="experience"><Experience /></section>
+        <section id="contact"><Contact /></section>
+      </main>
+    </div>
   );
 }
 

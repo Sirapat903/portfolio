@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* --- ส่วนที่พัทควรเพิ่มเพื่อลูกเล่นและความเนียน --- */
+
+html {
+  /* ทำให้เวลาพัทกดเมนูแล้วหน้าเลื่อนลงมาสวยๆ ไม่เด้งหาย */
+  scroll-behavior: smooth; 
+  /* ป้องกันแถบขาวโผล่ระหว่างหน้า */
+  background-color: #0a1118; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  /* ลบขอบขาวที่อาจจะค้างอยู่ */
+  margin: 0;
+  padding: 0;
+  /* กำหนดสีพื้นหลังหลักให้เป็นโทนมืดเหมือนหน้า Resume */
+  background-color: #0a1118; 
+  color: #ffffff;
+  /* ลบ scrollbar แนวนอนที่มักจะโผล่มาตอนทำ Animation */
+  overflow-x: hidden; 
+}
+
+/* ลูกเล่นเพิ่มความทันสมัย: ปรับแต่ง Scrollbar ด้านข้าง */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1118;
+}
+
+::-webkit-scrollbar-thumb {
+  /* ใช้สีฟ้าสว่างที่คุณชอบเป็นสีของแถบเลื่อน */
+  background: #00d2ff; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00a8ff;
 }

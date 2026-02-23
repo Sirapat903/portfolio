@@ -1,31 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // ลบ Route, Routes ออกจากที่นี่เพราะไม่ได้ใช้ใน Sidebar
 import './index.scss';
 
 const Sidebar = () => {
   return (
     <div className="nav-bar">
       <nav>
-        {/* ปุ่มไปหน้า About (หน้าหลัก) */}
-         <NavLink exact="true" activeclassname="active" to="/">
-          <span>HOME</span>
-        </NavLink>
-
-         <NavLink exact="true" activeclassname="active" className="resume-link" to="/resume">
-          <span>RESUME</span>
-        </NavLink>
-
-        {/* ปุ่มไปหน้า Experience */}
-        <NavLink exact="true" activeclassname="active" className="experience-link" to="/experience">
-          <span>EXPERIENCE</span>
-        </NavLink>
-
-        {/* ปุ่มไปหน้า Contact (ถ้าพัทสร้างไว้แล้ว) */}
-        <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact">
-          <span>CONTACT</span>
-        </NavLink>
-
-       
+        {/* ใช้ <a> พร้อม href ที่ตรงกับ id ใน App.js */}
+        <a href="#home" >HOME</a>
+        <a href="#about" >ABOUT</a>
+        <a href="#resume">RESUME</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#contact">CONTACT</a>
       </nav>
     </div>
   );

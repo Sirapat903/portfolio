@@ -1,75 +1,82 @@
-$primary-color: #ffd700;
+$primary-color: #00d2ff;
+$secondary-color: #00ff88; // เพิ่มสีเขียวมาตัดให้ดูมีมิติ
+$bg-dark: #0d1a27;
+
 .nav-bar {
-  background: #181818;
-  width: 160px; // ขยายเพิ่มเป็น 160px เพื่อให้คำว่า EXPERIENCE มีที่ว่างพอครับ
-  min-width: 160px;
-  height: 100vh;
+  background: rgba($bg-dark, 0.95); // ให้โปร่งแสงนิดๆ เห็นเนื้อหาลางๆ
+  backdrop-filter: blur(10px);    // ทำเอฟเฟกต์กระจกฝ้า
+  width: 100%;
+  height: 60px;
   position: fixed;
   top: 0;
-  left: 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 100;
+  align-items: center;
 
   nav {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     width: 100%;
+    gap: 30px;
 
     a {
-text-decoration: none;
-  color: #4d4d4e;
-  font-size: 13px;
-  height: 60px;
-  display: flex;
-  align-items: center;      // จัดกลางแนวตั้ง
-  justify-content: center; // จัดกลางแนวนอน
-  width: 100%;            // *** เพิ่มบรรทัดนี้เพื่อให้มันกินพื้นที่เต็ม 160px ***
-  margin: 0;              // *** ล้างระยะขอบที่อาจจะเกินมา ***
-  padding: 0;             // *** ล้างระยะห่างที่อาจจะทำให้มันเยื้อง ***
-  transition: all 0.3s;
-  
-  // เพิ่มบรรทัดนี้เพื่อให้มั่นใจว่าตัวหนังสือไม่โดนบีบ
-  white-space: nowrap;
+      text-decoration: none;
+      color: #8d8d8d;
+      font-size: 14px;
+      font-weight: 600;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+
+      // ลูกเล่น: เส้นใต้ที่จะวิ่งออกมาจากตรงกลาง
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
 
       &:hover {
         color: $primary-color;
-        background: rgba($primary-color, 0.05); // มีแสงสีทองจางๆ เวลาเอาเมาส์วาง
-      }
+        // ลูกเล่น: ตัวอักษรเรืองแสง
+        text-shadow: 0 0 8px rgba($primary-color, 0.6);
 
-      &.active {
-        color: $primary-color; // สีทองชัดเจนเมื่ออยู่หน้านั้น
-        font-weight: bold;
+        &::after {
+          width: 100%; // เส้นใต้ขยายเต็มตอน Hover
+        }
       }
     }
   }
 }
-/* ตัวแปรสีทองตามสไตล์คุณพัท */
+
 
 .container {
-  /* ลบ width: 100% ออก แล้วใช้คำสั่งนี้แทนเพื่อให้เนื้อหาไม่โดน Sidebar ทับ */
-  width: calc(100% - 150px); 
+  /* ปรับกลับมาใช้ความกว้างเต็ม และลบ margin-left เดิมออก */
+  width: 100%; 
+  margin-left: 0; 
   
-  /* ดันเนื้อหาจากทางซ้ายออกมา 150px (ให้พอดีกับความกว้าง Sidebar) */
-  margin-left: 150px; 
+  /* สำคัญ: ดันเนื้อหาลงมาด้านล่าง 60px เพื่อไม่ให้โดน Navbar ทับ */
+  margin-top: 60px; 
   
   will-change: contents;
-  height: 90%;
-  min-height: 566px;
-  position: absolute;
+  height: calc(100vh - 60px); // ปรับความสูงให้หักลบกับพื้นที่ Navbar
+  position: relative;        // เปลี่ยนจาก absolute เพื่อให้ margin-top ทำงานง่ายขึ้น
   opacity: 0;
-  top: 5%;
   z-index: 1;
   transform-style: preserve-3d;
   animation: fadeIn 1s forwards;
   animation-delay: 1s;
   
-  /* เพิ่มส่วนนี้เพื่อให้การจัดวางข้างในดูสวยขึ้น */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 
 @keyframes fadeInPage {
   from { opacity: 0; transform: translateX(10px); }
