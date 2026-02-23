@@ -10,7 +10,7 @@ const Resume = () => {
         <div className="header-section">
           <div className="title-text">
             <h1 className="page-title">Resume</h1>
-            <p className="subtitle">ประวัติการศึกษาและทักษะทางด้านเทคนิค</p>
+            <p className="subtitle">Educational background and technical skills.</p>
           </div>
           <a href="Resume.pdf" download className="download-btn">
             Download Resume
@@ -70,9 +70,9 @@ const Resume = () => {
                 <h3>Synergic Technology Company Limited</h3>
                 <span className="date">Internship</span>
                 <ul>
-                  <li>ตรวจสอบสินค้า (Notebooks, Printers, Computers) และนำเข้าข้อมูลสู่ระบบของบริษัท</li>
-                  <li>ติดตั้งระบบคอมพิวเตอร์ ณ สำนักงานธนาคารในเครือ (SCB, ธนาคารกรุงศรีฯ)</li>
-                  <li>บำรุงรักษาอุปกรณ์สำนักงาน เช่น เครื่องพิมพ์, เครื่องนับธนบัตร และคอมพิวเตอร์พกพา</li>
+                  <li>Inspect products (notebooks, printers,computers) and import them into the company's system.</li>
+                  <li>Install computer systems at affiliated bank offices (Siam Commercial Bank,Bank of Ayudhya).</li>
+                  <li>Maintain equipment in various bank offices (printers, banknote counters,notebooks, computers).</li>
                 </ul>
               </div>
             </section>

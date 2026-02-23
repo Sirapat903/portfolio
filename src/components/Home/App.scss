@@ -1,139 +1,119 @@
-// ตัวแปรสี
-$primary-color: #00a8ff;
-$dark-bg: #0a0a0a;
-$text-light: #ffffff;
+$primary-blue: #0088cc;
+$accent-green: #4ade80;
+$accent-yellow: #fbbf24;
 
-.hero-section {
-  background-color: $dark-bg;
-  min-height: 100vh;
+.stylish-hero {
+  background: #0a1118;
+  height: 100vh;
   display: flex;
   align-items: center;
-  color: $text-light;
-  overflow: hidden;
-}
-
-.content-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content:间-between;
-  gap: 50px;
-  padding: 2rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-}
-
-.text-zone {
-  flex: 1;
-  
-  h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    
-    .highlight {
-      color: $primary-color;
-      background: linear-gradient(90deg, #00a8ff, #00ff88);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
-
-  .job-title {
-    font-size: 1.5rem;
-    color: #ccc;
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-  }
-}
-
-// ส่วนของรูปภาพที่ต้องการเน้น
-.image-zone {
-  flex: 1;
-  display: flex;
   justify-content: center;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
   position: relative;
+  overflow: hidden;
 
-  .image-container {
+  // 1. เพิ่มลูกเล่นแสงฟุ้งสีสันที่พื้นหลัง (Background Orbs)
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.15;
+  }
+  &::before {
+    background: $primary-blue;
+    top: -100px;
+    right: -100px;
+  }
+  &::after {
+    background: $accent-green;
+    bottom: -100px;
+    left: -100px;
+  }
+
+  .container {
     position: relative;
-    width: 400px; // ปรับขนาดความกว้างที่ต้องการ
-    height: 500px; // ปรับขนาดความสูง
+    z-index: 1;
+  }
+
+  .main-title {
+    font-size: 5rem; // ขยายขนาดให้ดู Impact
+    font-weight: 800;
+    margin: 0;
+    // 2. ใช้การไล่เฉดสีที่ตัวอักษร (Gradient Text)
+    background: linear-gradient(90deg, #fff, $primary-blue, $accent-green);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    //animation: shine 5s linear infinite;
+  }
+
+  .sub-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    color: $accent-yellow; // ใช้สีเหลืองเน้นจุดสำคัญ
     
-    .profile-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // สำคัญมาก: เพื่อไม่ให้รูปเบี้ยว
-      border-radius: 30px; // ความโค้งมนแบบโมเดิร์น
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      border: 2px solid rgba($primary-color, 0.3);
-      z-index: 2;
-      position: relative;
-    }
-
-    // วงกลมพื้นหลังรูป
-    .image-bg-blob {
-      position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 100%;
-      height: 100%;
-      background: $primary-color;
-      filter: blur(80px);
-      opacity: 0.2;
-      z-index: 1;
+    em {
+      font-style: italic;
+      font-family: 'serif';
+      color: #fff;
     }
   }
-}
 
-// Floating Tags
-.floating-tag {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 10px 20px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-  z-index: 3;
-  animation: float 3s ease-in-out infinite;
-
-  &.tag-1 { top: 20%; left: -30px; }
-  &.tag-2 { bottom: 20%; right: -30px; animation-delay: 1s; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-// ปุ่ม
-.btn-group {
-  margin: 2rem 0;
-  display: flex;
-  gap: 15px;
-
-  .btn-primary {
-    padding: 12px 30px;
-    background: $primary-color;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    &:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba($primary-color, 0.4); }
+  .description-text {
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    
+    strong {
+      color: #fff;
+      border-bottom: 1px solid $primary-blue;
+    }
   }
 
-  .btn-outline {
-    padding: 12px 30px;
-    border: 2px solid $primary-color;
-    border-radius: 5px;
-    color: $primary-color;
+  .btn-dark {
+    background: linear-gradient(45deg, $primary-blue, #005580);
+    color: #fff;
+    padding: 1rem 3rem;
     text-decoration: none;
-    transition: 0.3s;
-    &:hover { background: $primary-color; color: white; }
+    font-weight: 700;
+    border-radius: 50px; // ทรงมนยาดูทันสมัยกว่า
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba($primary-blue, 0.3);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba($primary-blue, 0.5);
+      filter: brightness(1.2);
+    }
   }
+
+  .social-links {
+    margin-top: 4rem;
+    a {
+      font-size: 1.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $primary-blue;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// 3. Animation สำหรับให้สีที่ชื่อขยับได้
+@keyframes shine {
+  from { background-position: 0 0; }
+  to { background-position: 200% 0; } // ล็อคแกน Y ไว้ที่ 0
 }

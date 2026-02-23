@@ -1,88 +1,55 @@
 $primary-color: #00d2ff; 
+$secondary-color: #3a7bd5; // สีน้ำเงินเข้มสำหรับทำ Gradient
 $bg-dark: #0a1118;
+$card-bg: rgba(255, 255, 255, 0.03); // เอฟเฟกต์กระจกฝ้าจางๆ
 $text-light: #e0e0e0;
 $text-gray: #8d8d8d;
 $sidebar-width: 160px; 
 
 .resume-page {
-  background: $bg-dark;
+  background: radial-gradient(circle at top right, #16212e, $bg-dark); // เพิ่มมิติพื้นหลัง
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  padding-left: $sidebar-width; 
-  padding-right: 40px;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  display: flex;              
+  padding: 60px 40px 60px calc(#{$sidebar-width} + 20px); 
+  display: flex;               
   justify-content: center;   
 
   .content-container {
-    max-width: 1000px;       
+    max-width: 1000px;        
     width: 100%;
-    margin: 0 auto;          
+    margin: 0 auto;           
     display: flex;
     flex-direction: column;
+    animation: fadeInUp 0.8s ease-out;
   }
-
-  // --- ส่วนที่เพิ่ม/แก้ไขสำหรับ Soft Skills ---
-  .skill-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      color: $text-light; // กำหนดเป็นสีสว่างเพื่อให้มองเห็นชัดเจน 
-      margin-bottom: 12px;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      // เพิ่มจุด Bullet สีฟ้าให้นำสายตา
-      &::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background: $primary-color;
-        border-radius: 50%;
-        box-shadow: 0 0 5px $primary-color;
-      }
-    }
-  }
-  // ---------------------------------------
+  .download-btn {
+  display: inline-block; // เพิ่มเพื่อให้ปุ่มมีขนาดตาม padding
+  position: relative;
+  z-index: 10;
+  padding: 10px 24px;
+  border: 2px solid $primary-color; // ปรับให้หนาขึ้นเพื่อให้เห็นชัด
+  color: $primary-color;
+  background: transparent;
+  // ... ส่วนอื่นคงเดิม
+}
 
   .header-section {
     margin-bottom: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;      
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); // ปรับสีเส้นคั่นให้เข้ากับพื้นหลังมืด
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, $primary-color, transparent) 1; // เส้นคั่นไล่เฉดสี
     padding-bottom: 30px;
 
     .page-title {
-      font-size: 3.5rem;    
+      font-size: 4rem;     
       margin: 0;
-      color: #fff;
-    }
-
-    .subtitle {
-      margin-top: 5px;
-      color: $text-gray;
-    }
-
-    .download-btn {
-      padding: 10px 24px;
-      border: 1px solid $primary-color;
-      color: $primary-color;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      &:hover {
-        background: $primary-color;
-        color: #000;
-        box-shadow: 0 0 15px rgba($primary-color, 0.4);
-      }
+      background: linear-gradient(to bottom, #fff, $primary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; // ตัวอักษรไล่เฉดสี
+      filter: drop-shadow(0 0 10px rgba($primary-color, 0.3));
     }
   }
 
@@ -93,97 +60,113 @@ $sidebar-width: 160px;
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #fff;
     margin-bottom: 35px;
     display: flex;
     align-items: center;
     gap: 12px;
-    svg { color: $primary-color; }
+    position: relative;
+    
+    svg { 
+      color: $primary-color;
+      filter: drop-shadow(0 0 5px $primary-color);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: $primary-color;
+      box-shadow: 0 0 10px $primary-color; // เส้นใต้หัวข้อเรืองแสง
+    }
   }
 
   .timeline-item {
-    padding-left: 30px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 25px;
+    background: $card-bg;
+    border-radius: 12px;
+    border-left: 3px solid $primary-color;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+
+    &:hover {
+      transform: translateX(10px);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
 
     .circle-dot {
-      position: absolute;
-      left: -5px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
-      background: $bg-dark;
-      border: 2px solid $primary-color;
-      border-radius: 50%;
+      display: none; // ซ่อนจุดเดิมเพราะเราใช้ border-left แทนเพื่อให้ดูโมเดิร์นขึ้น
     }
 
     h3 {
       font-size: 1.2rem;
-      margin: 0 0 5px 0;
+      margin: 0 0 8px 0;
       color: $primary-color;
     }
 
     .date {
-      display: inline-block;
-      background: rgba($primary-color, 0.1);
-      color: $primary-color;
-      padding: 2px 10px;
-      border-radius: 15px;
-      font-size: 0.8rem;
-      margin-bottom: 8px;
-    }
-
-    .location {
-      color: $text-gray;
-      font-size: 0.9rem;
-    }
-
-    ul {
-      padding-left: 15px;
-      margin-top: 10px;
-      li {
-        color: $text-gray;
-        margin-bottom: 6px;
-        font-size: 0.9rem;
-      }
+      background: linear-gradient(135deg, rgba($primary-color, 0.2), rgba($secondary-color, 0.2));
+      border: 1px solid rgba($primary-color, 0.3);
+      color: #fff;
+      padding: 3px 12px;
+      font-weight: 600;
     }
   }
 
   .skill-bar {
-    margin-bottom: 25px;
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      color: $text-light;
-      font-size: 0.9rem;
-    }
+    margin-bottom: 30px;
     .progress-line {
-      height: 4px;
-      background: #1a2633;
-      border-radius: 2px;
+  height: 8px; 
+  background: rgba(255, 255, 255, 0.1); // เปลี่ยนจาก #1a2633 ให้สว่างขึ้นนิดนึงจะเห็นชัดขึ้น
+  border-radius: 10px;
+  width: 100%; // มั่นใจว่าแถบแม่ยาวเต็ม 100%
+  overflow: hidden;
+
+  span {
+    display: block; // *** สำคัญมาก: ถ้าไม่ใส่ แถบจะไม่ขึ้น ***
+    height: 100%;
+    background: linear-gradient(90deg, $secondary-color, $primary-color);
+    box-shadow: 0 0 10px $primary-color;
+    border-radius: 10px;
+    transition: width 1s ease-in-out; // เพิ่มอนิเมชั่นตอนโหลดหน้า
+  }
+
+      
       span {
-        display: block;
-        height: 100%;
-        background: $primary-color;
-        box-shadow: 0 0 8px $primary-color;
-        border-radius: 2px;
+        background: linear-gradient(90deg, $secondary-color, $primary-color);
+        box-shadow: 0 0 15px rgba($primary-color, 0.6); // แถบพลังเรืองแสง
+        border-radius: 10px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          animation: shine 2s infinite; // เอฟเฟกต์แสงวิ่งผ่านแถบ
+        }
       }
     }
   }
+
+  .skill-list li::before {
+    box-shadow: 0 0 10px $primary-color;
+  }
 }
 
-@media (max-width: 1024px) {
-  .resume-page {
-    padding-left: 20px; 
-    .header-section {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      .download-btn { margin-top: 20px; }
-    }
-    .resume-grid { grid-template-columns: 1fr; }
-  }
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
