@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+import './Resume.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap, faBriefcase, faCode, faUser } from '@fortawesome/free-solid-svg-icons';
 

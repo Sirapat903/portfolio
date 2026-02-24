@@ -1,9 +1,10 @@
-import Sidebar from './components/Sidebar';
-import Home from './components/Home';
-import About from './components/About';
+import Sidebar from './components/Sidebar/Sidebar';
+import Home from './components/Home/Home';
+import About from './components/About/About';
 import Experience from './components/Experience';
-import Contact from './components/Contact';
-import Resume from './components/Resume';
+import Contact from './components/Contact/Contact';
+import Resume from './components/Resume/Resume';
+import Skills from './components/Skills/Skills';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <section id="home"><Home /></section>
         <section id="about"><About /></section>
         <section id="resume"><Resume /></section>
+        <section id="skills"><Skills /></section>
         <section id="experience"><Experience /></section>
         <section id="contact"><Contact /></section>
       </main>

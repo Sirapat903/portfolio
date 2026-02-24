@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; // ลบ Route, Routes ออกจากที่นี่เพราะไม่ได้ใช้ใน Sidebar
-import './index.scss';
+import './Sidebar.scss';
 
 const Sidebar = () => {
   return (
@@ -10,6 +10,7 @@ const Sidebar = () => {
         <a href="#home" >HOME</a>
         <a href="#about" >ABOUT</a>
         <a href="#resume">RESUME</a>
+        <a href="#skills">SKILLS</a>
         <a href="#experience">EXPERIENCE</a>
         <a href="#contact">CONTACT</a>
       </nav>

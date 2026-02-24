@@ -1,5 +1,5 @@
 import React from 'react';
-import './index1.scss';
+import './About.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faLayerGroup, faBolt } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ const About = () => {
           <div className="text-zone">
             <h1 className="animate-title">
               Hello, I'm <br />
-              <span className="highlight">สิรภัทร บุญประเสริฐ</span>
+              <span className="highlight">Sirapat Boonprasert</span>
             </h1>
             <p className="job-title">Creative UI/UX | Developer</p>
             <p className="description">
