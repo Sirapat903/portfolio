@@ -32,9 +32,9 @@ const About = () => {
             </div>
             <div className="social-icons">
               <a href="https://github.com/Sirapat903/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
-              <a href="#"><FontAwesomeIcon icon={faLinkedin} /></a>
-              <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="#"><FontAwesomeIcon icon={faDribbble} /></a>
+              <a href="https://www.linkedin.com/in/%E0%B8%AA%E0%B8%B4%E0%B8%A3%E0%B8%A0%E0%B8%B1%E0%B8%97%E0%B8%A3-%E0%B8%9A%E0%B8%B8%E0%B8%8D%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%AA%E0%B8%A3%E0%B8%B4%E0%B8%90-1814813b4/"><FontAwesomeIcon icon={faLinkedin} /></a>
+              <a href="https://x.com/?lang=th"><FontAwesomeIcon icon={faTwitter} /></a>
+              
             </div>
           </div>
 
