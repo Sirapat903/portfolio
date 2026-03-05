@@ -2,10 +2,10 @@ import React from 'react';
 import './Skills.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faHtml5, faCss3Alt, faJsSquare, faReact, faPython, faNodeJs, faGithub, faJava, faPhp, faLaravel
+  faHtml5, faCss3Alt, faJsSquare, faReact, faPython,  faGithub, faJava
 } from '@fortawesome/free-brands-svg-icons';
 import { 
-  faCode, faDatabase, faNetworkWired, faDesktop, faRobot, faTools, faCogs, faMicrochip 
+  faCode, faDatabase, faNetworkWired, faDesktop, faRobot, faTools, faMicrochip 
 } from '@fortawesome/free-solid-svg-icons';
 
 

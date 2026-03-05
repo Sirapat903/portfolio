@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // ลบ Route, Routes ออกจากที่นี่เพราะไม่ได้ใช้ใน Sidebar
 import './Sidebar.scss';
 
 const Sidebar = () => {
