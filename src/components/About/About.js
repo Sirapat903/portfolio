@@ -51,7 +51,7 @@ const About = () => {
                 <FontAwesomeIcon icon={faLayerGroup} /> <span>UI/UX</span>
               </div>
                <div className="floating-tag tag-3">
-                <FontAwesomeIcon icon={faBolt} /> <span>Performance</span>
+                <FontAwesomeIcon icon={faBolt} /> <span>Tester</span>
               </div>
             </div>
           </div>

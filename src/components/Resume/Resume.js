@@ -1,7 +1,7 @@
 import React from 'react';
 import './Resume.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faBriefcase, faCode, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faBriefcase, faCode, faUser , faDownload} from '@fortawesome/free-solid-svg-icons';
 
 const Resume = () => {
   return (
@@ -12,9 +12,14 @@ const Resume = () => {
             <h1 className="page-title">Resume</h1>
             <p className="subtitle">Educational background and technical skills.</p>
           </div>
-          <a href="Resume.pdf" download className="download-btn">
-            Download Resume
-          </a>
+          <div className="button-group">
+            <a href="Resume.pdf" download className="download-btn">
+              <FontAwesomeIcon icon={faDownload} /> Download Resume 
+            </a>
+            <a href="Transcript.pdf" download className="download-btn thai-version">
+              <FontAwesomeIcon icon={faDownload} /> Download Transcript
+            </a>
+          </div>
           
         </div>
 
@@ -46,17 +51,7 @@ const Resume = () => {
             </section>
 
             {/* --- Soft Skills Section --- */}
-            <section className="skills">
-              <h2 className="section-title">
-                <FontAwesomeIcon icon={faUser} /> Soft Skills
-              </h2>
-              <ul className="skill-list">
-                <li>Communication & Teamwork</li>
-                <li>Interpersonal Skills</li>
-                <li>Time Management</li>
-                <li>Positive Attitude</li>
-              </ul>
-            </section>
+      
           </div>
 
           <div className="column">
@@ -80,23 +75,23 @@ const Resume = () => {
             {/* --- Technical Skills Section --- */}
             <section className="skills">
               <h2 className="section-title">
-                <FontAwesomeIcon icon={faCode} /> Technical Skills
+                <FontAwesomeIcon icon={faUser} /> Soft Skills
               </h2>
               <div className="skill-bar">
-                <div className="skill-info"><span>C / C++</span><span>85%</span></div>
+                <div className="skill-info"><span>Communication & Teamwork</span><span>85%</span></div>
                 <div className="progress-line"><span style={{ width: '85%' }}></span></div>
               </div>
               <div className="skill-bar">
-                <div className="skill-info"><span>HTML & SQL</span><span>75%</span></div>
+                <div className="skill-info"><span>Interpersonal Skills</span><span>75%</span></div>
                 <div className="progress-line"><span style={{ width: '75%' }}></span></div>
               </div>
               <div className="skill-bar">
-                <div className="skill-info"><span>Linux (Ubuntu/Raspbian)</span><span>80%</span></div>
+                <div className="skill-info"><span>Time Management</span><span>80%</span></div>
                 <div className="progress-line"><span style={{ width: '80%' }}></span></div>
               </div>
               <div className="skill-bar">
-                <div className="skill-info"><span>VS Code & Network</span><span>70%</span></div>
-                <div className="progress-line"><span style={{ width: '70%' }}></span></div>
+                <div className="skill-info"><span>Positive Attitude</span><span>85%</span></div>
+                <div className="progress-line"><span style={{ width: '85%' }}></span></div>
               </div>
             </section>
           </div>

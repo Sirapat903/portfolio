@@ -42,6 +42,11 @@ $sidebar-width: 160px;
     border-bottom: 2px solid;
     border-image: linear-gradient(to right, $primary-color, transparent) 1; // เส้นคั่นไล่เฉดสี
     padding-bottom: 30px;
+    
+    .button-group {
+    display: flex;
+    gap: 15px; // เว้นระยะห่างระหว่างปุ่ม
+  }
 
     .page-title {
       font-size: 4rem;     
