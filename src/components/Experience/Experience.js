@@ -1,7 +1,7 @@
 import React from 'react'
 import './Experience.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBriefcase, faCheckCircle, faTools, faUniversity } from '@fortawesome/free-solid-svg-icons'
+import { faBriefcase, faCheckCircle, faUniversity } from '@fortawesome/free-solid-svg-icons'
 
 const Experience = () => {
   return (

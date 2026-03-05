@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faLinkedin, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faLinkedin, faGithub,  } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faLayerGroup, faBolt } from '@fortawesome/free-solid-svg-icons';
 import profileImg from './assets/profile1.jpg'; 
 

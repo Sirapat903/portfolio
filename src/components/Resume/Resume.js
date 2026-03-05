@@ -1,7 +1,7 @@
 import React from 'react';
 import './Resume.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faBriefcase, faCode, faUser , faDownload} from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faBriefcase,  faUser , faDownload} from '@fortawesome/free-solid-svg-icons';
 
 const Resume = () => {
   return (
