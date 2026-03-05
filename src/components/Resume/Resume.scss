@@ -53,6 +53,7 @@ $sidebar-width: 160px;
       margin: 0;
       background: linear-gradient(to bottom, #fff, $primary-color);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent; // ตัวอักษรไล่เฉดสี
       filter: drop-shadow(0 0 10px rgba($primary-color, 0.3));
     }
